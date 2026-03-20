@@ -6,6 +6,9 @@ F1LapForge is an open‑source, physics‑based simulation workbench for explori
 
 It’s built for race engineers, sim racers, strategy analysts, and F1 enthusiasts who want to understand **why** one setup is faster than another, not just see a lap time.
 
+![](screenshots/Main_Page.png)
+![](screenshots/Consolidated_Lap_Telemetry.png)
+
 ---
 
 ## Current Features (Alpha 4.0 – March 2026)
@@ -42,6 +45,8 @@ Changes are made against a single backing YAML config (`config_runtime.yaml`), s
 - **Run Simulation** button  
   Executes a high‑fidelity single‑lap simulation using the current settings, logs to `simulation_log.txt`, and updates all result views.
 
+  ![](screenshots/Individual_Telemetry_5.png)
+
 ### Results & Analysis tab
 
 Shows a high‑level view suitable for quick engineering decisions:
@@ -71,6 +76,10 @@ More detailed look at the telemetry, split into four interactive Plotly charts:
    SOC (MJ) vs distance.
 4. **Throttle & brake pedal**  
    Throttle % and brake % vs distance.
+
+![](screenshots/Individual_Telemetry_1.png)
+![](screenshots/Individual_Telemetry_2.png)
+![](screenshots/Individual_Telemetry_4.png)
 
 ### Debug Logs tab
 

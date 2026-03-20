@@ -133,27 +133,29 @@ Implemented in `model/optimization.py`:
 - The resulting optimal strategy is passed back into `simulate_lap` for a final “best lap” and full telemetry.
 
 ---
-##Project strcuture
-F1LapForge/
-├── app.py                     # Main Streamlit entry point + tabs
-├── config_runtime.yaml        # Default vehicle, ERS, strategy config
-├── tracks_2026.yaml           # Circuit segment data
-├── model/
-│   ├── core.py                # Physics engine (segment_dynamics + simulate_lap)
-│   └── optimization.py        # Gradient-based auto-optimizer
-├── ui/
-│   ├── config_panel.py        # Sidebar parameter editor
-│   ├── results_panel.py       # Metrics, table, Plotly charts
-│   └── presets.py             # Save/load YAML presets
-├── utils/
-│   ├── yaml.py                # YAML load/save/merge helpers
-│   ├── format.py              # Time formatting utilities
-│   └── validation.py          # Input validation
-├── simulation_log.txt         # Auto-generated execution log
-└── requirements.txt
+## Project strcuture
+```text
+  F1LapForge/
+  ├── app.py                     # Main Streamlit entry point + tabs
+  ├── config_runtime.yaml        # Default vehicle, ERS, strategy config
+  ├── tracks_2026.yaml           # Circuit segment data
+  ├── model/
+  │   ├── core.py                # Physics engine (segment_dynamics + simulate_lap)
+  │   └── optimization.py        # Gradient-based auto-optimizer
+  ├── ui/
+  │   ├── config_panel.py        # Sidebar parameter editor
+  │   ├── results_panel.py       # Metrics, table, Plotly charts
+  │   └── presets.py             # Save/load YAML presets
+  ├── utils/
+  │   ├── yaml.py                # YAML load/save/merge helpers
+  │   ├── format.py              # Time formatting utilities
+  │   └── validation.py          # Input validation
+  ├── simulation_log.txt         # Auto-generated execution log
+  └── requirements.txt
+```
 ---
 
-#### Installation & Running
+## Installation & Running
 
 1. Clone the repository
    ```bash
@@ -173,7 +175,7 @@ F1LapForge/
 
 ---
 
-### Reporting bugs or requesting features
+## Reporting bugs or requesting features
 
 1. Go to: <https://github.com/ak-dev-os/F1LapForge/issues>  
 2. Click **New issue**.  

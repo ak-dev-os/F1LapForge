@@ -131,3 +131,67 @@ Implemented in `model/optimization.py`:
 - Objective:
   - Minimise lap time plus a penalty if final SOC falls below the strategy’s SOC floor threshold.
 - The resulting optimal strategy is passed back into `simulate_lap` for a final “best lap” and full telemetry.
+
+---
+##Project strcuture
+F1LapForge/
+├── app.py                     # Main Streamlit entry point + tabs
+├── config_runtime.yaml        # Default vehicle, ERS, strategy config
+├── tracks_2026.yaml           # Circuit segment data
+├── model/
+│   ├── core.py                # Physics engine (segment_dynamics + simulate_lap)
+│   └── optimization.py        # Gradient-based auto-optimizer
+├── ui/
+│   ├── config_panel.py        # Sidebar parameter editor
+│   ├── results_panel.py       # Metrics, table, Plotly charts
+│   └── presets.py             # Save/load YAML presets
+├── utils/
+│   ├── yaml.py                # YAML load/save/merge helpers
+│   ├── format.py              # Time formatting utilities
+│   └── validation.py          # Input validation
+├── simulation_log.txt         # Auto-generated execution log
+└── requirements.txt
+---
+
+#### Installation & Running
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/ak-dev-os/F1LapForge.git
+   cd F1LapForge
+2. Create virtual environment (recommended)
+   ```bash
+   python -m venv venv
+   source venv/bin/activate     # Linux / macOS
+   venv\Scripts\activate        # Windows
+3. Install dependencies
+   ```bash
+   pip install -r requirements.txt
+5. Run the application
+   ```bash
+   streamlit run app.py   
+
+---
+
+### Reporting bugs or requesting features
+
+1. Go to: <https://github.com/ak-dev-os/F1LapForge/issues>  
+2. Click **New issue**.  
+3. Choose the appropriate template (**Bug report** / **Feature request**) or write a clear description including:
+   - Steps to reproduce  
+   - Expected vs actual behavior  
+   - Screenshots, log excerpts, and environment information  
+
+### Code contributions
+
+1. Fork the repository.  
+2. Create your feature branch:  
+   ```bash
+   git checkout -b feature/amazing-feature
+3. Commit your changes
+   ```bash
+   git commit -m "Add amazing feature"
+4. Push to the branch
+   ```bash
+   git push origin feature/amazing-feature
+5. Raise Pull Request

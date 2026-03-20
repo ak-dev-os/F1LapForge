@@ -1,0 +1,168 @@
+# F1LapForge – Configuration Template (Alpha 4.0)
+# This file serves as the default starting point for the UI.
+# Users can override any value interactively.
+# All values are either FIA 2026 regs, typical estimates, or calibrated to Australia Q3 + China Sprint SQ3.
+
+runtime:
+  default_race_key: "china"
+  default_constructor: "Mercedes"
+  default_strategy: "aggressive"
+  tyre_compound: "soft"
+  realism_multiplier: 0.965
+
+constructors:
+  generic:
+    powertrain:
+      ice_power_kw: 400.0 # Typical 2026 ICE peak
+      total_pu_kw: 750.0 # FIA PU cap
+    ers:
+      SOC_max_MJ: 4.0 # FIA battery capacity
+      P_K_max_kW: 350.0 # FIA MGU-K max
+      deploy_efficiency: 0.92
+      harvest_efficiency: 0.85
+      thermal_duty_threshold: 0.72
+      max_harvest_mj_per_lap_quali: 7.0
+    chassis:
+      mass_kg: 768.0
+      cd_straight_base: 0.78
+      cd_corner: 1.05
+      cla_straight: -3.2
+      cla_corner: -4.1
+      reference_area_m2: 1.4
+      drs_reduction: 0.22
+    tyres:
+      soft:
+        grip_multiplier: 1.05
+      medium:
+        grip_multiplier: 0.96
+
+  Mercedes:
+    powertrain:
+      ice_power_kw: 415.0
+      total_pu_kw: 765.0
+    ers:
+      SOC_max_MJ: 4.0
+      P_K_max_kW: 350.0
+      deploy_efficiency: 0.93
+      harvest_efficiency: 0.87
+      thermal_duty_threshold: 0.75
+      max_harvest_mj_per_lap_quali: 7.3
+    chassis:
+      mass_kg: 768.0
+      cd_straight_base: 0.76
+      cd_corner: 1.05
+      cla_straight: -3.2
+      cla_corner: -4.25
+      reference_area_m2: 1.4
+      drs_reduction: 0.22
+    tyres:
+      soft:
+        grip_multiplier: 1.07
+      medium:
+        grip_multiplier: 0.98
+    driver_style:
+      trail_brake_factor: 1.12
+
+  Ferrari:
+    powertrain:
+      ice_power_kw: 405.0
+      total_pu_kw: 745.0
+    ers:
+      SOC_max_MJ: 4.0
+      P_K_max_kW: 350.0
+      deploy_efficiency: 0.92
+      harvest_efficiency: 0.84
+      thermal_duty_threshold: 0.68
+      max_harvest_mj_per_lap_quali: 6.9
+    chassis:
+      mass_kg: 768.0
+      cd_straight_base: 0.81
+      cd_corner: 1.05
+      cla_straight: -3.2
+      cla_corner: -4.35
+      reference_area_m2: 1.4
+      drs_reduction: 0.22
+    tyres:
+      soft:
+        grip_multiplier: 1.04
+      medium:
+        grip_multiplier: 0.97
+    driver_style:
+      trail_brake_factor: 1.05
+
+  RedBullFord:
+    powertrain:
+      ice_power_kw: 390.0
+      total_pu_kw: 740.0
+    ers:
+      SOC_max_MJ: 4.0
+      P_K_max_kW: 350.0
+      deploy_efficiency: 0.91
+      harvest_efficiency: 0.88
+      thermal_duty_threshold: 0.70
+      max_harvest_mj_per_lap_quali: 7.5
+    chassis:
+      mass_kg: 768.0
+      cd_straight_base: 0.74
+      cd_corner: 1.05
+      cla_straight: -3.2
+      cla_corner: -4.45
+      reference_area_m2: 1.4
+      drs_reduction: 0.22
+    tyres:
+      soft:
+        grip_multiplier: 1.04
+      medium:
+        grip_multiplier: 0.96
+    driver_style:
+      trail_brake_factor: 1.08
+
+environment:
+  default:
+    air_temp_c: 20.0
+    track_temp_c: 35.0
+    wind_speed_kmh: 10.0
+  china:
+    air_temp_c: 14.0
+    track_temp_c: 33.0
+    wind_speed_kmh: 12.0
+
+strategies:
+  aggressive:
+    name: "Aggressive"
+    deploy_factor_base: 1.08
+    harvest_factor_base: 1.10
+    target_final_soc_mj: 0.60
+    thermal_duty_threshold: 0.72
+    soc_floor_penalty_threshold: 0.40
+    max_harvest_mj_per_lap_quali: 7.0
+    super_clip_harvest_kw_cap: 250
+    deploy_ramp_rate_kws: 140
+    speed_derate_start_kmh: 290
+    speed_derate_full_kmh: 340
+
+  balanced:
+    name: "Balanced"
+    deploy_factor_base: 0.94
+    harvest_factor_base: 0.96
+    target_final_soc_mj: 1.10
+    thermal_duty_threshold: 0.68
+    soc_floor_penalty_threshold: 0.50
+    max_harvest_mj_per_lap_quali: 7.0
+    super_clip_harvest_kw_cap: 250
+    deploy_ramp_rate_kws: 120
+    speed_derate_start_kmh: 290
+    speed_derate_full_kmh: 340
+
+  conservative:
+    name: "Conservative"
+    deploy_factor_base: 0.82
+    harvest_factor_base: 1.05
+    target_final_soc_mj: 1.80
+    thermal_duty_threshold: 0.60
+    soc_floor_penalty_threshold: 0.70
+    max_harvest_mj_per_lap_quali: 7.0
+    super_clip_harvest_kw_cap: 250
+    deploy_ramp_rate_kws: 100
+    speed_derate_start_kmh: 290
+    speed_derate_full_kmh: 340

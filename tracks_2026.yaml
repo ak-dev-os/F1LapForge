@@ -1,0 +1,125 @@
+# F1LapForge – Track Configuration File
+# All baseline_time_s values are realistic estimates for 2026 medium-tyre pace in Q1/Q2 sessions
+#   (calibrated from 2025/2026 historical sector splits + expected power/aero changes)
+# length_m values are approximate segment lengths derived from official circuit length + sector proportions
+# corner_radius_m values are average effective radii of dominant corners in the segment
+#   (estimated from track maps, onboard footage, and real-world corner speed data)
+# carried forward from Alpha 3.1 for Alpha 4.0
+
+season:
+  year: 2026
+
+races:
+  australia:
+    round: 1
+    meeting_name: "Australian Grand Prix 2026"
+    circuit:
+      name: "Albert Park Circuit"
+      length_km: 5.278 # Official FIA circuit length
+    segments:
+      - id: T01
+        name: "Start–T1 straight"
+        type: "STRAIGHT"
+        baseline_time_s: 8.2 # Typical Q1 medium-tyre time for start-finish straight + T1 entry
+        length_m: 920 # Measured from track map (start line to T1 apex)
+        corner_radius_m: 0 # Pure straight – no significant cornering
+      - id: T02
+        name: "T1–T3 complex"
+        type: "CORNER"
+        baseline_time_s: 12.1 # Calibrated to real-world Q1 sector 1 split range
+        length_m: 650 # Estimated from track geometry (T1 to T3 exit)
+        corner_radius_m: 85 # Average radius of T1 hairpin + T2–T3 sequence
+      - id: T03
+        name: "T3 exit straight"
+        type: "STRAIGHT"
+        baseline_time_s: 7.3 # Typical medium-tyre time for short straight after T3
+        length_m: 780 # Measured from T3 exit to T4 braking zone
+        corner_radius_m: 0 # Pure straight
+      - id: T04
+        name: "Middle sector (T4–T10)"
+        type: "MIXED"
+        baseline_time_s: 27.3 # Typical medium-tyre time for middle sector (includes T4–T10 sweepers)
+        length_m: 1550 # Approximate length of middle sector
+        corner_radius_m: 160 # Average radius of medium-speed sweepers (T6–T9 area)
+      - id: T05
+        name: "Final sector (T11–T16)"
+        type: "MIXED"
+        baseline_time_s: 26.6 # Typical medium-tyre time for final sector (T11–T16 flowing section)
+        length_m: 1378 # Remaining distance to finish line
+        corner_radius_m: 195 # Average radius of high-speed flowing corners (T11–T12, T15–T16)
+
+  china:
+    round: 2
+    meeting_name: "Chinese Grand Prix 2026"
+    circuit:
+      name: "Shanghai International Circuit"
+      length_km: 5.451 # Official FIA circuit length
+    segments:
+      - id: C01
+        name: "Start–T1 hairpin"
+        type: "CORNER"
+        baseline_time_s: 9.5 # Typical SQ1 medium-tyre time for long tightening Turn 1
+        length_m: 850 # Measured from start line to T1 exit
+        corner_radius_m: 120 # Average radius of tightening T1 hairpin (100–140 m range)
+      - id: C02
+        name: "T2–T6 technical"
+        type: "MIXED"
+        baseline_time_s: 14.8 # Typical medium-tyre time for technical section T2–T6
+        length_m: 950 # Estimated from track geometry
+        corner_radius_m: 90 # Average radius of tight corners in this section
+      - id: C03
+        name: "Turns 7–8–9 high-speed esses"
+        type: "CORNER"
+        baseline_time_s: 12.2 # Typical time for flowing high-speed esses
+        length_m: 700 # Length of T7–T9 sequence
+        corner_radius_m: 180 # Average radius of high-g flowing corners
+      - id: C04
+        name: "Back straight"
+        type: "STRAIGHT"
+        baseline_time_s: 13.8 # Typical medium-tyre time for long back straight
+        length_m: 1200 # Official back straight length
+        corner_radius_m: 0 # Pure straight – DRS zone
+      - id: C05
+        name: "Final sector (T13–T16 hairpin)"
+        type: "MIXED"
+        baseline_time_s: 20.5 # Typical medium-tyre time for final sector including hairpin
+        length_m: 1451 # Remaining distance to finish line
+        corner_radius_m: 70 # Average radius of tight hairpin + technical exit
+
+  japan:
+    round: 3
+    meeting_name: "Japanese Grand Prix 2026"
+    circuit:
+      name: "Suzuka Circuit"
+      length_km: 5.807 # Official FIA circuit length
+    segments:
+      - id: J01
+        name: "Start–First Curve"
+        type: "STRAIGHT"
+        baseline_time_s: 7.2 # Typical medium-tyre time for start to First Curve
+        length_m: 800 # Measured from start line to Turn 1
+        corner_radius_m: 0 # Pure straight
+      - id: J02
+        name: "S-curves (T3–T7)"
+        type: "CORNER"
+        baseline_time_s: 17.8 # Typical time for flowing S-curves section
+        length_m: 1100 # Length of S-curves sequence
+        corner_radius_m: 140 # Average radius of high-speed S-section
+      - id: J03
+        name: "Degner 1 & 2"
+        type: "MIXED"
+        baseline_time_s: 19.5 # Typical time for Degner 1 & 2 complex
+        length_m: 950 # Estimated from track geometry
+        corner_radius_m: 110 # Average radius of Degner corners
+      - id: J04
+        name: "Spoon + back straight"
+        type: "STRAIGHT"
+        baseline_time_s: 14.2 # Typical medium-tyre time for Spoon curve + long back straight
+        length_m: 1400 # Length including Spoon and straight
+        corner_radius_m: 0 # Mostly straight with Spoon curve
+      - id: J05
+        name: "130R + Casio Triangle"
+        type: "MIXED"
+        baseline_time_s: 18.3 # Typical time for high-speed 130R + chicane
+        length_m: 1557 # Remaining distance to finish line
+        corner_radius_m: 250 # Average radius of very high-speed 130R section
